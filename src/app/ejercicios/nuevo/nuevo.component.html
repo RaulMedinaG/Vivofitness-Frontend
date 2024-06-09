@@ -1,0 +1,62 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="myForm" (ngSubmit)="create()" autocomplete="off">
+                    <div class="d-flex justify-content-center align-items-center flex-column">
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+
+                                <input type="text" class="form-control" formControlName="name"
+                                    placeholder="Ej: Press militar con mancuernas">
+
+                                <span *ngIf="isValidField('name')" class="form-text text-danger">
+                                    {{ getFieldError('name') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Descripcion</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" formControlName="description"
+                                    placeholder="Ej: El Press Militar con mancuernas se realiza desde ...">
+
+                                <span *ngIf="isValidField('description')" class="form-text text-danger">
+                                    {{ getFieldError('description') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Grupo Muscular</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" formControlName="muscle"
+                                    placeholder="Ej: Hombro">
+
+                                <span *ngIf="isValidField('muscle')" class="form-text text-danger">
+                                    {{ getFieldError('muscle') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Imagen</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" formControlName="image"
+                                    placeholder="Ej: https://fitgeneration.es/wp-content/uploads/2023/12/press-militar-4-jpg.webp">
+
+                                <span *ngIf="isValidField('image')" class="form-text text-danger">
+                                    {{ getFieldError('image') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn text-white"
+                            style="background-color: rgb(54, 175, 255);">Crear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

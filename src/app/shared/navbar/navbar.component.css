@@ -1,0 +1,15 @@
+.fondo{
+    background-color: rgb(54, 175, 255);
+}
+
+.transparent-button {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.transparent-button:hover,
+.transparent-button:focus {
+    outline: none;
+}

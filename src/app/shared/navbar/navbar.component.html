@@ -1,0 +1,50 @@
+<div class="d-flex justify-content-between fondo">
+    <nav class="navbar navbar-expand-lg w-100">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a class="nav-link">
+                        <a class="nav-link active" routerLink="" routerLinkActive="">
+                            <img src="https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped.png"
+                                loading="lazy" width="200em"
+                                sizes="(max-width: 479px) 76vw, (max-width: 767px) 54vw, (max-width: 991px) 425px, 199.8671875px"
+                                alt=""
+                                srcset="https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-500.png 500w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-800.png 800w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-1080.png 1080w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-1600.png 1600w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-2000.png 2000w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped-p-2600.png 2600w, https://assets-global.website-files.com/5f8652bf15d1c56bba00d09d/6571e7f109f79e42bd7cc237_Cropped.png 5483w"
+                                class="image-77">
+                        </a>
+                    </a>
+                    <a class="nav-link">
+                        <b><a class="nav-link active" routerLink="inicio" routerLinkActive="active">Inicio</a></b>
+                    </a>
+                    <a class="nav-link">
+                        <b><a class="nav-link" routerLink="ejercicios" routerLinkActive="active">Ejercicios</a></b>
+                    </a>
+                    <a class="nav-link">
+                        <b><a class="nav-link" routerLink="monitores" routerLinkActive="active">Monitores</a></b>
+                    </a>
+                    <a class="nav-link">
+                        <b><a class="nav-link" routerLink="actividades" routerLinkActive="active">Actividades</a></b>
+                    </a>
+                    <a class="nav-link">
+                        <b><a class="nav-link" routerLink="informacion" routerLinkActive="active">Sobre nosotros</a></b>
+                    </a>
+                    <a class="nav-link" *ngIf="user_logged == 'raul@gmail.com' && inicioSesion == true">
+                        <b><a class="nav-link" routerLink="socios" routerLinkActive="active">Socios</a></b>
+                    </a>
+                    <a class="nav-link" *ngIf="!inicioSesion">
+                        <b><a class="nav-link" routerLink="auth/login" routerLinkActive="active">Iniciar Sesión</a></b>
+                    </a>
+                </div>
+                <div class="ms-auto" *ngIf="inicioSesion">
+                    <button class="btn transparent-button text-white" (click)="logOut()">
+                        <span><b>Cerrar Sesión <i class="bi bi-box-arrow-right"></i></b></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>

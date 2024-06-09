@@ -1,0 +1,29 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <table class="table w-50 table-bordered rounded-table">
+            <thead>
+                <tr>
+                    <th scope="col" class="text-center">#</th>
+                    <th scope="col" class="text-center">Nombre</th>
+                    <th scope="col" class="text-center">Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let usuario of usuarios; let i = index">
+                    <th scope="row" class="text-center">{{i+1}}</th>
+                    <td>{{usuario.name}}</td>
+                    <td>
+                        <div class="d-flex justify-content-between">
+                            <span>{{usuario.email}}</span>
+                            <div>
+                                <a [routerLink]="['/socios/socio', usuario._id]"><i class="bi bi-pencil-square me-1 text-primary"></i></a>
+                                <button class="transparent-button" (click)="eliminar(usuario._id!)"><i class="bi bi-trash text-danger"></i></button>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

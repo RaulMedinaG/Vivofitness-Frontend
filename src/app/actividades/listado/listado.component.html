@@ -1,0 +1,44 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <h1 class="text-white ms-4 pt-4 pb-4 text-center">NUESTRAS ACTIVIDADES</h1>
+        <div class="activities">
+            <div class="activity" *ngFor="let actividad of actividadesParte1; let i = index">
+                <a [routerLink]="['/actividades/actividad', actividad._id]">
+                    <img src="{{actividad.image}}">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>{{actividad.name}}</h3>
+                            <hr>
+                            <p>{{actividad.description}}</p>
+                            <hr>
+                            <p>Personas registradas: {{actividad.registered.length}}/{{actividad.participants}}</p>
+                            <p>Horario: {{actividad.hourhand}}</p>
+                            <hr>
+                            <a *ngIf="!actividad.registered.includes(user_logged) && actividad.registered.length < actividad.participants"
+                                class="fs-6 text-white" style="text-decoration: none;"><b>REGISTRARSE</b></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="activity" *ngFor="let actividad of actividadesParte2; let i = index">
+                <a [routerLink]="['/actividades/actividad', actividad._id]">
+                    <img src="{{actividad.image}}">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>{{actividad.name}}</h3>
+                            <hr>
+                            <p>{{actividad.description}}</p>
+                            <hr>
+                            <p>Personas registradas: {{actividad.registered.length}}/{{actividad.participants}}</p>
+                            <p>Horario: {{actividad.hourhand}}</p>
+                            <hr>
+                            <a *ngIf="!actividad.registered.includes(user_logged) && actividad.registered.length < actividad.participants"
+                                class="fs-6 text-white" style="text-decoration: none;"><b>REGISTRARSE</b></a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>

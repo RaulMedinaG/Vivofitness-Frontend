@@ -1,0 +1,28 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <h1 class="text-white ms-4 pt-4 pb-4 text-center">{{actividad.name}}</h1>
+        <div class="cronometro">
+            <div class="display">
+                {{ formatTime(tiempo) }}
+            </div>
+            <div class="controls">
+                <button class="start button" (click)="startTimer()">Iniciar</button>
+                <button class="stop button" (click)="stopTimer()">Parar</button>
+                <button class="reset button" (click)="resetTimer()">Reiniciar</button>
+            </div>
+        </div>
+        <div class="start-count d-flex mt-3">
+            <span>Contador de repeticiones: {{ contador_repeticiones }}/30</span>
+        </div>
+        <div class="start-count d-flex mt-3" *ngIf="user_in_actividad==true">
+            <span>Ya estás registrado/a</span>
+        </div>
+        <div class="d-flex mt-3" *ngIf="user_in_actividad==false && actividad.registered.length < actividad.participants">
+            <button class="registrarse" (click)="registerInActividad()">Apuntarse</button>
+        </div>
+        <div class="d-flex mt-3" *ngIf="user_in_actividad==false && actividad.registered.length==10">
+            <button class="registrarse" (click)="registerInWaitingList()">Apuntarse en lista de espera</button>
+        </div>
+    </div>
+</div>

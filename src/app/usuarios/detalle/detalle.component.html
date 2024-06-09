@@ -1,0 +1,40 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="myForm" (ngSubmit)="update(user._id!)" autocomplete="off">
+                    <div class="d-flex justify-content-center align-items-center flex-column">
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Nombre</label>
+                            <div class="col-sm-9">
+
+                                <input type="text" class="form-control" formControlName="name"
+                                    placeholder="{{user.name}}">
+
+                                <span *ngIf="isValidField('name')" class="form-text text-danger">
+                                    {{ getFieldError('name') }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="mb-3 row w-100">
+                            <label class="col-sm-3 col-form-label">Email</label>
+                            <div class="col-sm-9">
+                                <input type="text" class="form-control" formControlName="email"
+                                    placeholder="{{user.email}}">
+
+                                <span *ngIf="isValidField('email')" class="form-text text-danger">
+                                    {{ getFieldError('email') }}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <button class="btn text-white"
+                            style="background-color: rgb(54, 175, 255);">Actualizar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

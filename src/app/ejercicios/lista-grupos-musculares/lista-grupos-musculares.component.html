@@ -1,0 +1,16 @@
+<div class="contenedor-imagen">
+    <div class="opacidad-imagen"></div>
+    <div class="contenido">
+        <div class="d-flex">
+            <h2 class="text-white ms-4 pt-4 pb-4 linea">
+                Grupos Musculares
+                <a *ngIf="user_logged == 'raul@gmail.com' && inicioSesion == true" class="ms-3" routerLink="/ejercicios/añadir"><button class="btn btn-primary">Añadir Ejercicio</button></a>
+            </h2>
+        </div>
+        <ul>
+            <li *ngFor="let grupo of grupos_musculares; let i = index" style="list-style: none;">
+                <a [routerLink]="['/ejercicios/listaporgrupo/', grupo]" class="d-flex justify-content-between" style="text-decoration: none;"><h4>{{grupo}}</h4> <h4><i class="bi bi-arrow-right"></i></h4></a>
+            </li>
+        </ul>
+    </div>
+</div>
